@@ -1,0 +1,49 @@
+23-03-2026
+Uninstalled previous versions of PostgreSQL. 
+Downloaded and installed version 17 and had completed the setup process.
+
+learning
+
+#list of databases
+->> \l in PostgreSQL shell gives the list of databases available in the system.
+select datname from pg_database; this also gives you the same result!
+datname in PostgreSQL is a column in the system catalog table pg_database that stores the name of a specific database. It represents the string identifier (name) used to connect to that database and is often used in SQL queries to list, filter, or manage databases within a server instance. 
+
+#to select or change database
+->> \c <db_name>;
+or simply select the db in pg_admin windows application and do the processing. It also works.
+
+->>\dt
+using this command while inside DB gives the list of tables in that particular database
+or if you want to see that in pdAdmin, then click on schemas and you will find it there.
+
+#deleting a database
+->> drop database <db_name>
+or simply select the db in pg_admin and right click to get options and delete them.
+
+CRUD
+
+#table creation syntax
+CREATE TABLE <table_name> (
+	<column_name> <column_data_type>,
+	...
+	...
+);
+
+there are multiple column data types available
+they can be
+INT for integer values
+VARCHAR for characters/strings -> VARCHAR (100) means this column has the ability to store 100 characters.
+
+->>\d <table_name>;
+this command gives the list of columns and their datatypes and other useful information.
+
+
+#Adding Data into the table
+Syntax->
+INSERT INTO <table_name>(<ColName1>,<ColName2>,…)
+VALUES (<val1>,<val2>,…);
+Or
+INSERT INTO <table_name> VALUES (val1,val2…);
+In the second syntax type the tables gets fille from left to right, for col1->val1, col2->val2..
+
