@@ -46,4 +46,70 @@ VALUES (<val1>,<val2>,…);
 Or
 INSERT INTO <table_name> VALUES (val1,val2…);
 In the second syntax type the tables gets fille from left to right, for col1->val1, col2->val2..
+There is another way
+
+insert into instadb(id, account_age,regular_user,private_acc)
+values 
+(1,1,false,true),
+(2,1,true,false),
+(3,5,true,true)
+;
+
+#Reading
+Select * from <Table_name>;
+Gives all columns in the table.
+Select col1,col2.. from <table_name> is also acceptable.
+#Updating
+update instadb
+	set account_age=5
+	where id = '2';
+
+#delete
+Delete from <table_name>
+Where <colName>=value;
+Typically the colname In the where clause would be an identifier
+
+DataTypes – an attribute that specifies the type of data in a column of our database
+#Numeric
+INT, DOUBLE, FLOAT, DECIMAL
+#String -> VARCHAR
+#Date -> Date
+#Boolean-> Boolean-> values can be 0,1,True,False
+
+
+
+https://www.postgresql.org/docs/current/datatype.html - Data types documentation from postgreqsl.
+
+
+
+Constraints
+#Primary key
+It is used to uniquely identify a row/record in a table
+They should not be null
+Each table can only have ONE primary key.
+#NOT NULL
+While creating a table, if we add a NOT NULL constraint after declaring the data type of the column it cannot take a null value in any of its rows.
+#Default value
+Same like not null, if add a default value constraint, it will keep all the rows with the same value unless explicitly mentioned while inserting
+Example
+CREATE TABLE <table_name> (
+	<column_name> <column_data_type> default <default_Value>,
+	...
+);
+
+#Auto increment
+Each row from the beginning gets a value that is going to increase itself as rows keep getting added.
+To use this feature use ‘SERIAL’ after declaring column name.
+Example
+CREATE TABLE <table_name> (
+	<column_name> SERIAL,
+	...
+);
+Mostly used for IDs.. 
+SERIAL stretches from 1 to 2147483647, if needed more than tha
+there is something called as bigserial.
+
+
+
+
 
