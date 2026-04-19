@@ -110,6 +110,12 @@ SERIAL stretches from 1 to 2147483647, if needed more than tha
 there is something called as bigserial.
 
 
-
+like clause
+if we want data of a column that contains a letter or a word
+for example: wee need data of whoever has an 'hi' in their fname:
+select * from employees where fname like '%hi%';
+ 
+or if we want some one whose name is only 3 letters
+select * from employees where fname like '___';
 
 
